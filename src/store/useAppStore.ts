@@ -88,7 +88,9 @@ export const useAppStore = create<AppState>()(
         const user = get().user
         if (!user) return
         const next = { ...user, ...patch }
-        set({ user: next, filters: defaultFilters(next) })
+        // Only a new schedule resets the feed filters; adding a class should not undo them
+        const scheduleChanged = 'campusDays' in patch || 'timeWindows' in patch
+        set(scheduleChanged ? { user: next, filters: defaultFilters(next) } : { user: next })
       },
 
       setFilters: (filters) => set({ filters }),
