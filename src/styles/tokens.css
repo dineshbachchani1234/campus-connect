@@ -16,7 +16,8 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  /* Darkened from 0.556 so secondary text passes 4.5:1 on tinted cards too (Apple HIG, WCAG AA) */
+  --muted-foreground: oklch(0.5 0 0);
   --accent: oklch(0.96 0.03 200);
   --accent-foreground: oklch(0.32 0.09 200);
   --destructive: oklch(0.577 0.245 27.325);
@@ -75,7 +76,8 @@
 
 /* App-specific tokens (not used by shadcn) */
 :root {
-  --success: oklch(0.55 0.13 150);
+  /* Darkened from 0.55 so white text on green badges passes 4.5:1 */
+  --success: oklch(0.48 0.13 150);
   --success-foreground: oklch(0.98 0 0);
   --warning: oklch(0.75 0.15 75);
   --app-max-width: 420px;

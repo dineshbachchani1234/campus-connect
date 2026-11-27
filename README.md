@@ -143,6 +143,8 @@ Open http://localhost:5173. To see it as a phone, open your browser's dev tools 
 
 **Adding a shadcn component:** `npx shadcn@latest add <name>`, for example `npx shadcn@latest add tabs`. It lands in `src/components/ui/`.
 
+**Design skills (Claude Code):** run `npm run setup:skills` once, then ask Claude to use the `campus-connect-ui` and `apple-design` skills for any UI work. See [CONTRIBUTING.md](CONTRIBUTING.md#design-skills-for-claude-code-everyone-once-per-machine).
+
 **Changing the look:** colors, corner radius and app width live in [`src/styles/tokens.css`](src/styles/tokens.css). Change a value there and every screen updates.
 
 ## Running a test session
@@ -152,7 +154,7 @@ For our high-fidelity user testing (3 to 5 participants).
 1. Open the live link on the test phone or laptop.
 2. **Reset before each participant** so everyone starts from the same state: Profile, then Reset all demo data. (A hidden demo panel with more controls is planned, see issues.)
 3. The app comes with realistic sample data: six plans across the week, seven verified students, and one plan already joined (Coffee break at ISEC on Wednesday) so the "already enrolled" state can be tested.
-4. **Task 2 shortcut:** you cannot wait for a real meetup to end in a test session. Open the group chat for a plan and tap "Demo: end this meetup now" (or use the demo panel) to bring up the "Make this weekly?" prompt.
+4. **Task 2 shortcut:** you cannot wait for a real meetup to end in a test session. Open the group chat for a plan, tap "Facilitator tools" at the top of the messages, then tap "Demo: end this meetup now" (or use the demo panel) to bring up the "Make this weekly?" prompt.
 5. Sign up accepts any `@northeastern.edu` address. No real account is created and nothing leaves the browser.
 
 Testing plan, scripts and notes go in [`docs/testing/`](docs/testing/).
