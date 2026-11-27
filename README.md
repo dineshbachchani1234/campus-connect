@@ -143,6 +143,8 @@ Open http://localhost:5173. To see it as a phone, open your browser's dev tools 
 
 **Adding a shadcn component:** `npx shadcn@latest add <name>`, for example `npx shadcn@latest add tabs`. It lands in `src/components/ui/`.
 
+**Design skills (Claude Code):** run `npm run setup:skills` once, then ask Claude to use the `campus-connect-ui` and `apple-design` skills for any UI work. See [CONTRIBUTING.md](CONTRIBUTING.md#design-skills-for-claude-code-everyone-once-per-machine).
+
 **Changing the look:** colors, corner radius and app width live in [`src/styles/tokens.css`](src/styles/tokens.css). Change a value there and every screen updates.
 
 ## Running a test session
