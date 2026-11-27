@@ -78,7 +78,7 @@ export function HomeFeed() {
             <button
               type="button"
               onClick={() => setFilterOpen(true)}
-              className="inline-flex min-h-9 w-fit items-center gap-2 rounded-full border border-primary/20 bg-accent px-3 text-sm font-medium text-accent-foreground outline-none hover:border-primary/50 focus-visible:ring-3 focus-visible:ring-ring/50"
+              className="inline-flex min-h-11 w-fit items-center gap-2 rounded-full border border-primary/20 bg-accent px-3 text-sm font-medium text-accent-foreground outline-none hover:border-primary/50 focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               <CalendarDaysIcon className="size-4" aria-hidden />
               {custom ? 'Showing' : 'My days'}: {summary.days} · {summary.time}
