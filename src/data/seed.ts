@@ -128,7 +128,7 @@ export const SEED_PLANS: Plan[] = [
     startTime: '10:00',
     durationMin: 30,
     hostId: 'lena',
-    attendeeIds: ['lena', 'aditi', 'me'],
+    attendeeIds: ['lena', 'aditi'],
     reason: 'Coffee before the 10:30 lecture',
     visibility: 'class',
     classTag: 'CS 5200',
