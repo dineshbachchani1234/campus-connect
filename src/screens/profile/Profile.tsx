@@ -18,7 +18,7 @@ import { useAppStore } from '@/store/useAppStore'
 // and classes drive "shares your class" on plans (principle 2).
 
 const chip =
-  'h-10 rounded-full border px-4 text-sm data-[state=on]:border-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground'
+  'h-11 rounded-full border px-4 text-sm data-[state=on]:border-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground'
 
 const sameSet = <T,>(a: T[], b: T[]) => a.length === b.length && a.every((x) => b.includes(x))
 
@@ -204,7 +204,7 @@ export function Profile() {
             <div className="flex-1">
               <FormField label="Add a class" error={classError}>
                 <Input
-                  className="h-10"
+                  className="h-11"
                   placeholder="CS 5340"
                   value={classInput}
                   autoCapitalize="characters"
@@ -215,7 +215,7 @@ export function Profile() {
                 />
               </FormField>
             </div>
-            <Button type="submit" variant="outline" className="mt-6 h-10" disabled={!classInput.trim()}>
+            <Button type="submit" variant="outline" className="mt-6 h-11" disabled={!classInput.trim()}>
               <PlusIcon /> Add
             </Button>
           </form>
