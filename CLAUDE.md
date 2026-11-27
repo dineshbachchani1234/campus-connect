@@ -26,24 +26,20 @@ npm run dev     # http://localhost:5173
 npm run check   # type check, lint, formatting (same as CI)
 ```
 
-## Frontend design
+## Frontend design (required for every UI change)
 
-For any frontend UI work (new screens, restyling, reviewing a screenshot), load the `apple-design` skill first and follow Apple's Human Interface Guidelines through it: accessibility and contrast first, then layout, typography and color. This is a web app, so Apple's principles and foundations apply (accessibility, color, typography, layout, writing), not iOS-only conventions.
+Before any frontend work (a new screen, a restyle, a component, or reviewing a screenshot), load **both** skills:
 
-- Keep using the tokens in `src/styles/tokens.css` and the shadcn components in `src/components/ui/`. No hard coded colors in screens.
-- Tap targets at least 44px, visible focus rings, nothing conveyed by color alone.
-- Every action gives visible feedback (toast, new screen or state change), and every list has an empty and error state.
-- Tie design changes to the in-class feedback items 1 to 6 in `README.md` and log them in `docs/design-evolution.md` with before and after screenshots.
+1. **`campus-connect-ui`** (in this repo, `.claude/skills/campus-connect-ui/SKILL.md`): our team rules, including the 44px tap targets, 4.5:1 contrast, tokens, one strong button per view, the in-class feedback items 1 to 6, copy rules, and the PR checklist.
+2. **`apple-design`** (personal install): Apple's Human Interface Guidelines, used for the reasoning and citations. Work through accessibility and contrast first, then layout, typography and color. This is a web app, so Apple's principles and foundations apply, not iOS-only conventions.
 
-The skill isn't in this repo, because it contains Apple's copyrighted guideline text. Install it once per machine:
+If `apple-design` is not installed, run this once per machine and start a new Claude Code session:
 
 ```bash
-git clone --depth 1 https://github.com/dickwu/apple-design-skill /tmp/apple-design-skill
-mkdir -p ~/.claude/skills/apple-design
-cp -R /tmp/apple-design-skill/SKILL.md /tmp/apple-design-skill/references ~/.claude/skills/apple-design/
+npm run setup:skills
 ```
 
-Then start a new Claude Code session.
+It installs a pinned, reviewed version from https://github.com/dickwu/apple-design-skill into `~/.claude/skills/apple-design`. It is not committed here because it contains Apple's copyrighted guideline text.
 
 ## Conventions
 
