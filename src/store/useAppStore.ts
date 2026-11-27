@@ -64,9 +64,12 @@ const freshData = () => ({
   meetupPromptPlanId: null,
 })
 
+/** NU emails look like "last.first@northeastern.edu", so "chen.maya" becomes "Maya Chen" */
 const nameFromEmail = (email: string) => {
-  const local = email.split('@')[0] ?? 'Student'
-  return local.charAt(0).toUpperCase() + local.slice(1)
+  const cap = (w: string) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
+  const parts = (email.split('@')[0] ?? '').split(/[._]/).filter(Boolean)
+  if (parts.length >= 2) return `${cap(parts[1])} ${cap(parts[0])}`
+  return parts[0] ? cap(parts[0]) : 'Student'
 }
 
 export const useAppStore = create<AppState>()(
