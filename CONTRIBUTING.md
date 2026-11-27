@@ -13,6 +13,19 @@ npm run dev
 
 Recommended VS Code extensions: Tailwind CSS IntelliSense, Prettier, oxc.
 
+### Design skills for Claude Code (everyone, once per machine)
+
+We all design with the same two Claude Code skills, so screens stay consistent:
+
+```bash
+npm run setup:skills
+```
+
+Then start a new Claude Code session in this folder. Before any UI work, ask Claude to use the **campus-connect-ui** and **apple-design** skills, for example: "Use the campus-connect-ui and apple-design skills to build the My Groups screen for issue #9." To review a screen, ask: "Run an apple-design review of the Create a plan screen."
+
+- `campus-connect-ui` lives in this repo (`.claude/skills/`). It holds our rules: 44px tap targets, contrast, tokens, button emphasis, feedback items 1 to 6, copy, and the PR checklist.
+- `apple-design` is Apple's Human Interface Guidelines. It installs to your home folder and is not committed, because it contains Apple's text.
+
 ## Every task
 
 1. **Pick your issue** on the project board and move it to In progress.
@@ -50,6 +63,8 @@ Recommended VS Code extensions: Tailwind CSS IntelliSense, Prettier, oxc.
 - Write UI text in plain, friendly words. No jargon.
 
 ## Design checklist before you open a PR
+
+The full list is in `.claude/skills/campus-connect-ui/SKILL.md`. The short version:
 
 - Works at phone width (375px) and inside the desktop phone frame
 - Every tappable thing looks tappable and is at least 44px tall
