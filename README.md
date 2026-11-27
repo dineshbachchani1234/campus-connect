@@ -8,7 +8,7 @@ This repository is the **T4 high-fidelity prototype**, built as a runnable web a
 
 |                      |                                                       |
 | -------------------- | ----------------------------------------------------- |
-| **Live prototype**   | _Link added after the first Vercel deploy_            |
+| **Live prototype**   | https://campus-connect-ux-trio.vercel.app             |
 | **Repository**       | https://github.com/dineshbachchani1234/campus-connect |
 | **Team 12, UX Trio** | Dinesh Bachchani, Saravjit Singh, Furqan Abid         |
 | **Due**              | Thursday, December 4, 2026                            |
@@ -225,6 +225,8 @@ The app is a static site hosted on Vercel and connected to this repository.
 - Every push to `main` updates the live link.
 - Every pull request gets its own preview link.
 - [`vercel.json`](vercel.json) sends every path to `index.html`, so opening `/plans/snell-study` directly or refreshing works.
+
+Production URL: https://campus-connect-ux-trio.vercel.app (hosted on Dinesh's personal Vercel account, deployment protection off so anyone can open it).
 
 To deploy by hand: `npx vercel` (preview) or `npx vercel --prod` (live).
 
