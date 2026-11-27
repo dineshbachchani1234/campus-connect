@@ -8,7 +8,7 @@ This repository is the **T4 high-fidelity prototype**, built as a runnable web a
 
 |                      |                                                       |
 | -------------------- | ----------------------------------------------------- |
-| **Live prototype**   | _Link added after the first Vercel deploy_            |
+| **Live prototype**   | https://campus-connect-ux-trio.vercel.app             |
 | **Repository**       | https://github.com/dineshbachchani1234/campus-connect |
 | **Team 12, UX Trio** | Dinesh Bachchani, Saravjit Singh, Furqan Abid         |
 | **Due**              | Thursday, December 4, 2026                            |
@@ -152,7 +152,7 @@ For our high-fidelity user testing (3 to 5 participants).
 1. Open the live link on the test phone or laptop.
 2. **Reset before each participant** so everyone starts from the same state: Profile, then Reset all demo data. (A hidden demo panel with more controls is planned, see issues.)
 3. The app comes with realistic sample data: six plans across the week, seven verified students, and one plan already joined (Coffee break at ISEC on Wednesday) so the "already enrolled" state can be tested.
-4. **Task 2 shortcut:** you cannot wait for a real meetup to end in a test session. Open the group chat for a plan and tap "Demo: end this meetup now" (or use the demo panel) to bring up the "Make this weekly?" prompt.
+4. **Task 2 shortcut:** you cannot wait for a real meetup to end in a test session. Open the group chat for a plan, tap "Facilitator tools" at the top of the messages, then tap "Demo: end this meetup now" (or use the demo panel) to bring up the "Make this weekly?" prompt.
 5. Sign up accepts any `@northeastern.edu` address. No real account is created and nothing leaves the browser.
 
 Testing plan, scripts and notes go in [`docs/testing/`](docs/testing/).
@@ -225,6 +225,8 @@ The app is a static site hosted on Vercel and connected to this repository.
 - Every push to `main` updates the live link.
 - Every pull request gets its own preview link.
 - [`vercel.json`](vercel.json) sends every path to `index.html`, so opening `/plans/snell-study` directly or refreshing works.
+
+Production URL: https://campus-connect-ux-trio.vercel.app (hosted on Dinesh's personal Vercel account, deployment protection off so anyone can open it).
 
 To deploy by hand: `npx vercel` (preview) or `npx vercel --prod` (live).
 
