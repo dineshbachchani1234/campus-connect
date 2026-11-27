@@ -21,6 +21,7 @@
 
 ## Checklist
 
+- [ ] UI built or reviewed with the `campus-connect-ui` and `apple-design` skills (`npm run setup:skills`)
 - [ ] Works at phone width (375px) and in the desktop phone frame
 - [ ] Empty, loading and error states handled where they apply
 - [ ] Keyboard: can tab to every control and see the focus ring
