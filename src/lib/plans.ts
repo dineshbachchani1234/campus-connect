@@ -1,6 +1,7 @@
 // Pure helpers for plans. No React here, so they are easy to reuse and test.
 import { PEOPLE } from '@/data/seed'
-import type { Activity, CurrentUser, Filters, Person, Plan, TimeWindow } from '@/lib/types'
+import { DAYS, TIME_WINDOWS } from '@/lib/types'
+import type { Activity, CurrentUser, Day, Filters, Person, Plan, TimeWindow } from '@/lib/types'
 
 export const ACTIVITY_LABEL: Record<Activity, string> = {
   study: 'Study',
@@ -60,4 +61,57 @@ export function matchesFilters(plan: Plan, filters: Filters): boolean {
 
 export function isFull(plan: Plan): boolean {
   return plan.attendeeIds.length >= plan.maxSize
+}
+
+export const DAY_NAME: Record<Day, string> = {
+  Mon: 'Monday',
+  Tue: 'Tuesday',
+  Wed: 'Wednesday',
+  Thu: 'Thursday',
+  Fri: 'Friday',
+}
+
+/** "My days: Tue, Wed · Daytime" style summary for the filter chip */
+export function describeFilters(filters: Filters): { days: string; time: string; activities: string } {
+  const days =
+    filters.days.length === 0 || filters.days.length === DAYS.length ? 'Any day' : sortDays(filters.days).join(', ')
+  const tw = new Set(filters.timeWindows)
+  let time: string
+  if (tw.size === 0 || tw.size === TIME_WINDOWS.length) time = 'Any time'
+  else if (tw.size === 2 && tw.has('morning') && tw.has('afternoon')) time = 'Daytime'
+  else
+    time = TIME_WINDOWS.filter((t) => tw.has(t))
+      .map((t) => t[0].toUpperCase() + t.slice(1))
+      .join(', ')
+  const activities = filters.activities.length === 0 ? '' : filters.activities.map((a) => ACTIVITY_LABEL[a]).join(', ')
+  return { days, time, activities }
+}
+
+export function sortDays(days: Day[]): Day[] {
+  return [...days].sort((a, b) => DAYS.indexOf(a) - DAYS.indexOf(b))
+}
+
+/** Plans sorted by weekday then start time, grouped by day */
+export function groupByDay(plans: Plan[]): { day: Day; plans: Plan[] }[] {
+  const sorted = [...plans].sort(
+    (a, b) => DAYS.indexOf(a.day) - DAYS.indexOf(b.day) || a.startTime.localeCompare(b.startTime),
+  )
+  const groups: { day: Day; plans: Plan[] }[] = []
+  for (const p of sorted) {
+    const last = groups.at(-1)
+    if (last && last.day === p.day) last.plans.push(p)
+    else groups.push({ day: p.day, plans: [p] })
+  }
+  return groups
+}
+
+/** True when filters are not the user's own campus days and hours */
+export function filtersAreCustom(filters: Filters, user: CurrentUser | null): boolean {
+  if (!user) return false
+  const same = <T>(a: T[], b: T[]) => a.length === b.length && a.every((x) => b.includes(x))
+  return (
+    !same(filters.days, user.campusDays) ||
+    !same(filters.timeWindows, user.timeWindows) ||
+    filters.activities.length > 0
+  )
 }
