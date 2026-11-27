@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router'
 import { BottomNav } from '@/components/BottomNav'
+import { DemoPanel } from '@/components/DemoPanel'
 import { Toaster } from '@/components/ui/sonner'
 import { AfterMeetupPrompt } from '@/screens/groups/AfterMeetupPrompt'
 
@@ -21,6 +22,7 @@ export function AppShell() {
         </div>
         {showNav && <BottomNav />}
         <AfterMeetupPrompt />
+        <DemoPanel />
         <Toaster />
       </div>
     </div>
