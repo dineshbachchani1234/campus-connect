@@ -128,7 +128,8 @@ export const SEED_PLANS: Plan[] = [
     startTime: '10:00',
     durationMin: 30,
     hostId: 'lena',
-    attendeeIds: ['lena', 'aditi'],
+    // Includes 'me' because SEED_JOINED_PLAN_IDS has this plan; the two must agree
+    attendeeIds: ['lena', 'aditi', 'me'],
     reason: 'Coffee before the 10:30 lecture',
     visibility: 'class',
     classTag: 'CS 5200',
@@ -173,20 +174,27 @@ export const SEED_JOINED_PLAN_IDS: string[] = ['coffee-isec']
 
 export const SEED_GROUPS: Group[] = []
 
+/**
+ * ISO time a number of minutes before the app loaded. Seed messages use this so
+ * they always read as recent ("Today, 1:10 PM") instead of a fixed date that can
+ * land in the future or long ago during a test session.
+ */
+const minutesAgo = (min: number) => new Date(Date.now() - min * 60_000).toISOString()
+
 export const SEED_MESSAGES: Message[] = [
-  { id: 'm1', planId: 'snell-study', authorId: 'aditi', text: 'See you at 2!', at: '2026-12-01T13:10:00' },
+  { id: 'm1', planId: 'snell-study', authorId: 'aditi', text: 'See you at 2!', at: minutesAgo(52) },
   {
     id: 'm2',
     planId: 'snell-study',
     authorId: 'rahul',
     text: 'Bringing my notes from week 6',
-    at: '2026-12-01T13:12:00',
+    at: minutesAgo(50),
   },
   {
     id: 'm3',
     planId: 'coffee-isec',
     authorId: 'lena',
     text: 'I will grab the table by the window',
-    at: '2026-12-02T09:40:00',
+    at: minutesAgo(20),
   },
 ]
