@@ -31,3 +31,4 @@ course-materials/
 
 # Local test artifacts
 .playwright-mcp/
+.env*

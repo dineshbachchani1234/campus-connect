@@ -226,6 +226,8 @@ The app is a static site hosted on Vercel and connected to this repository.
 - Every pull request gets its own preview link.
 - [`vercel.json`](vercel.json) sends every path to `index.html`, so opening `/plans/snell-study` directly or refreshing works.
 
+Production URL: https://campus-connect-ux-trio.vercel.app (hosted on Dinesh's personal Vercel account, deployment protection off so anyone can open it).
+
 To deploy by hand: `npx vercel` (preview) or `npx vercel --prod` (live).
 
 ## Course context and AI use
