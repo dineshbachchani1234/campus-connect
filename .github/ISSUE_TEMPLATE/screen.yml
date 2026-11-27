@@ -1,0 +1,36 @@
+name: Screen or feature
+description: Build or improve a screen or a shared component
+labels: []
+body:
+  - type: input
+    id: screen
+    attributes:
+      label: Screen
+      description: Name from the T3 paper prototype (e.g. Plan details)
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What to build
+      description: Elements, states and interactions
+    validations:
+      required: true
+  - type: dropdown
+    id: feedback
+    attributes:
+      label: In-class feedback this addresses
+      multiple: true
+      options:
+        - None
+        - 1. Plans do not stand out
+        - 2. No text entry affordance
+        - 3. No already enrolled state
+        - 4. Missing feedback and popups
+        - 5. Create a plan not discoverable
+        - 6. Calendar and Message too close
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: Checklist that proves it works
