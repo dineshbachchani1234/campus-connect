@@ -17,7 +17,7 @@ interface Props {
 // live, so people see the effect before they commit (feedback 4: visible feedback).
 
 const chip =
-  'h-10 rounded-full border px-4 text-sm data-[state=on]:border-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground'
+  'h-11 rounded-full border px-4 text-sm data-[state=on]:border-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground'
 
 function Group<T extends string>({
   label,
