@@ -8,7 +8,7 @@ This repository is the **T4 high-fidelity prototype**, built as a runnable web a
 
 |                      |                                                       |
 | -------------------- | ----------------------------------------------------- |
-| **Live prototype**   | _Link added after the first Vercel deploy_            |
+| **Live prototype**   | https://campus-connect-ux-trio.vercel.app             |
 | **Repository**       | https://github.com/dineshbachchani1234/campus-connect |
 | **Team 12, UX Trio** | Dinesh Bachchani, Saravjit Singh, Furqan Abid         |
 | **Due**              | Thursday, December 4, 2026                            |
